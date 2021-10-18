@@ -1,0 +1,50 @@
+{
+    "files.exclude": {
+        ".secret.json": true,
+        "node_modules": true,
+        "rollup.config.js": true,
+        "package*.json": true,
+    },
+    "editor.fontSize": 15,
+    "diffEditor.renderIndicators": false,
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.tabCompletion": "on",
+    "code-runner.runInTerminal": true,
+    // 运行代码之前清除之前的输出
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.fileDirectoryAsCwd": true,
+    // 因为上面那个选项会自动 cd，所以我删除了默认编译命令中的 cd 语句
+    // 同时我将编译结果的输出目录修改为了同目录下的 build 文件夹
+    // 不然源码文件和编译结果混杂在一个目录中非常杂乱（尤其是刷题时）
+    // 这里只保留了 C 和 C++ 的编译命令，有需要其他语言的请自行添加
+    "code-runner.executorMap": {
+        "cpp": "g++ $fileName -o $workspaceRoot/build/$fileNameWithoutExt.exe && $workspaceRoot/build/$fileNameWithoutExt.exe",
+        // g++ $fileName -o build/$fileNameWithoutExt && .\\build\\$fileNameWithoutExt
+        // "scheme": "scheme -quiet < $fileName",
+        "scheme": "scheme < $fileName",
+        "python": "python3 $fileName",
+    },
+    // 在运行代码之前保存文件
+    "code-runner.saveFileBeforeRun": true,
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorBlinking": true,
+    "files.autoGuessEncoding": false,
+    "code-runner.preserveFocus": false,
+    "C_Cpp.intelliSenseCacheSize": 128,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "C_Cpp.errorSquiggles": "Disabled",
+    "code-runner.ignoreSelection": true,
+    "editor.quickSuggestions":  true,
+    // "[cpp]": {
+    //     "editor.quickSuggestions": true
+    // },
+    // "[c]": {
+    //     "editor.quickSuggestions": true
+    // },
+    // "C_Cpp.autocomplete": "Disabled",
+    "vim.startInInsertMode": true,
+    "vim.smartRelativeLine": true,
+    "vim.useCtrlKeys": false,
+}
