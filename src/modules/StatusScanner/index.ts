@@ -1,6 +1,9 @@
+export const initGlobalStats = function () {
+    if (!Memory.stats) Memory.stats = {};
+}
+
 export const stateScanner = function () {
-    // 每 20 tick 运行一次
-    if (Game.time % 20) return
+    if (Game.time % 19) return
 
     if (!Memory.stats) Memory.stats = {}
 
@@ -12,5 +15,12 @@ export const stateScanner = function () {
     // CPU 的当前使用量
     Memory.stats.cpu = Game.cpu.getUsed()
     // bucket 当前剩余量
-    Memory.stats.bucket = Game.cpu.bucket
+    Memory.stats.bucket = Game.cpu.bucket;
+}
+
+
+
+export const stateScannerPlugin = {
+    reset: initGlobalStats,
+    tickEnd: stateScanner
 }

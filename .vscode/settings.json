@@ -4,6 +4,7 @@
         "node_modules": true,
         "rollup.config.js": true,
         "package*.json": true,
+        "tsconfig.json": true,
     },
     "editor.fontSize": 15,
     "diffEditor.renderIndicators": false,
@@ -36,7 +37,7 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "C_Cpp.errorSquiggles": "Disabled",
     "code-runner.ignoreSelection": true,
-    "editor.quickSuggestions":  true,
+    "editor.quickSuggestions": true,
     // "[cpp]": {
     //     "editor.quickSuggestions": true
     // },
