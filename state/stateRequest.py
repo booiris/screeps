@@ -14,6 +14,8 @@ while (True):
         res = res[3:]
         data = gzip.decompress(base64.b64decode(res)).decode()
         data = json.loads(data)["stats"]
+        for x in data:
+            data[x] = float(data[x])
         res = [{"measurement": "status", "fields": data}]
         client.write_points(res, database="screeps")
     except Exception as e:

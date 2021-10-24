@@ -1,0 +1,3 @@
+interface Memory{
+    source: {Object};
+}
