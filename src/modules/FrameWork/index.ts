@@ -53,19 +53,7 @@ export default class App {
      * 来源 @see https://screeps.slack.com/files/U33SKDU0P/F5GKDBBAA/Memory_Cache.js?origin_team=T0HJCPP9T&origin_channel=C2G22RFPF
      */
     private _memoryCacher: MemoryCacher = next => {
-        // console.log(this._cachedMemory)
-        // if (this._cachedMemory) {
-        //     delete global.memory;
-        //     global.memory = this._cachedMemory
-        // } else {
-        //     console.log("cache restart")
-        //     this._cachedMemory = Memory
-        // }
-
-        next()
-
-        // RawMemory.set(JSON.stringify(global.memory));
-        // console.log(JSON.stringify(global.memory));
+        next();
     }
 
     /**

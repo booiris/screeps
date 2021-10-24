@@ -4,7 +4,7 @@
         "node_modules": true,
         "rollup.config.js": true,
         "package*.json": true,
-        "tsconfig.json": true,
+        // "tsconfig.json": true,
     },
     "editor.fontSize": 15,
     "diffEditor.renderIndicators": false,

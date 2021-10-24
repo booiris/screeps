@@ -11,4 +11,6 @@ app.on(primary_part);
 
 app.on(stateScannerPlugin);
 
+app.on({ tickEnd : () => { console.log(Game.cpu.getUsed()) } });
+
 export const loop = () => app.run();

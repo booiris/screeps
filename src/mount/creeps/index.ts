@@ -1,4 +1,4 @@
-import { use } from './mount_task';
+import { use } from '../task';
 
 export function mount_creep(): void {
     if (!Creep.prototype.work) {

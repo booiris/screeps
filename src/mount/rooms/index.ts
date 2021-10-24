@@ -1,4 +1,4 @@
-import { Task } from './mount_task';
+import { Task } from '../task';
 
 export function mount_room(): void {
     for (const name in Game.rooms) {

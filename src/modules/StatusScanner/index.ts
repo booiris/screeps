@@ -3,10 +3,10 @@ export const initGlobalStats = function () {
 }
 
 export const stateScanner = function () {
-    // TODO 修改时间
-    // if (Game.time % 19) return
+
+    if (Game.time % 19) return
     // 统计 GCL / GPL 的升级百分比和等级
-    console.log("i m here")
+    
     Memory.stats.gcl = (Game.gcl.progress / Game.gcl.progressTotal) * 100
     Memory.stats.gclLevel = Game.gcl.level
     Memory.stats.gpl = (Game.gpl.progress / Game.gpl.progressTotal) * 100
