@@ -12,18 +12,10 @@ export const creep_number_listener = function () {
     for (const name in Game.spawns) {
         if (!Game.spawns[name].spawnCreep([WORK, CARRY, MOVE],
             'Worker1', { dryRun: true }) && creeps_num < config.normal) {
-            var newName = '' + Game.time;
+            const newName = '' + Game.time;
             console.log('Spawning new harvester: ' + newName);
-            Game.spawns[name].spawnCreep([WORK, CARRY, MOVE], newName);
+            Game.spawns[name].spawnCreep([WORK, CARRY, MOVE], newName, { memory: { role: "harvester", source_id:"5bbcad2b9099fc012e636be7"}});
             creeps_num++;
         }
-        // if (Game.spawns[name].spawning) {
-        //     var spawningCreep = Game.creeps[Game.spawns[name].spawning.name];
-        //     Game.spawns[name].room.visual.text(
-        //         '🛠️' + "harvester",
-        //         Game.spawns[name].pos.x + 1,
-        //         Game.spawns[name].pos.y,
-        //         { align: 'left', opacity: 0.8 });
-        // }
     }
 }

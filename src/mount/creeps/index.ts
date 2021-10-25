@@ -1,16 +1,15 @@
-import { use } from '../task';
+import { harvester } from '../../roles/harvester/index';
+export class creep_ex extends Creep {
 
-export function mount_creep(): void {
-    if (!Creep.prototype.work) {
-        Creep.prototype.work = function (): void {
-            if (!this.memory.work_task) {
-                if (this.room.memory.tasks.length) {
-                    this.memory.work_task = this.room.memory.tasks.pop();
-                }
-            }
-            if (this.memory.work_task) {
-                use(this.memory.work_task, this);
-            }
+    public onWork() {
+        switch (this.memory.role) {
+            case "harvester":
+                this.say("Hello world");
+                harvester(this.memory.source_id, this);
+                break;
+        
+            default:
+                break;
         }
     }
 }

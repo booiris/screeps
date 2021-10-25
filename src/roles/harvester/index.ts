@@ -1,7 +1,7 @@
 export function harvester(source_id: string, creep: Creep): void {
-    // TODO 添加位置信息
-    const stand_pos: RoomPosition = Memory.source[source_id].stand_pos;
-    
+
+    const stand_pos: RoomPosition = global.source[source_id];
+
     if (!creep.pos.isEqualTo(stand_pos)) {
         creep.moveTo(stand_pos);
     }
@@ -13,6 +13,5 @@ export function harvester(source_id: string, creep: Creep): void {
             const source: Source = Game.getObjectById(source_id);
             creep.harvest(source);
         }
-
     }
 }
