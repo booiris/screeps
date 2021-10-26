@@ -5,12 +5,13 @@ import { primary_part } from './modules/primary_part';
 import { creep_ex } from './mount/creeps/index';
 import { room_ex } from './mount/rooms/index';
 import { source_ex } from './mount/structure/source/index';
-import { creep_number_listener } from './creepControl.ts/creepControl';
+import { spawn_ex } from './mount/structure/spawns/index';
 
 const mount_list: [AnyClass, AnyClass][] = [
     [Creep, creep_ex],
     [Room, room_ex],
-    [Source, source_ex]
+    [Source, source_ex],
+    [Spawn, spawn_ex],
 ]
 
 const app = new App({ name: "myApp", mountList: mount_list });
@@ -21,6 +22,6 @@ app.on(primary_part);
 
 app.on(stateScannerPlugin);
 
-app.on({ tickStart: creep_number_listener, tickEnd: () => { console.log(Game.cpu.getUsed()) } });
+app.on({ tickEnd: () => { console.log(Game.cpu.getUsed()) } });
 
 export const loop = () => app.run();

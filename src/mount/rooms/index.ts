@@ -7,8 +7,8 @@ export class room_ex extends Room {
         if (!global.rooms[name]) {
             global.rooms[name] = Game.map.getRoomTerrain(name);
         }
-        const targets:source_ex[] = this.find(FIND_SOURCES);
-        targets[0].onWork();
-        targets[1].onWork();
+        const targets: source_ex[] = this.find(FIND_SOURCES);
+        for (const name in targets)
+            targets[name].onWork();
     }
 }
