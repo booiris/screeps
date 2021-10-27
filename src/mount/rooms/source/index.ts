@@ -4,8 +4,6 @@ export class source_ex extends Source {
 
     public onWork(): void {
         const id = this.id;
-        if (!global.source)
-            global.source = {};
         if (!global.source[id])
             global.source[id] = {};
         if (!global.source[id].stand_pos) {
