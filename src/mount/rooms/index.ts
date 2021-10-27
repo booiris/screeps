@@ -1,4 +1,4 @@
-import { source_ex } from '../structure/source/index';
+import { source_ex } from './source/index';
 export class room_ex extends Room {
     public onWork() {
         const name = this.name;

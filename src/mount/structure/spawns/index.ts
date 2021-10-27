@@ -2,7 +2,9 @@ import { priority_role, config } from './creep_config';
 export class spawn_ex extends Spawn {
     public onWork() {
 
-        check_creep_number();
+        if (Game.time % 300 == 0) {
+            check_creep_number();
+        }
 
         for (const name in Game.spawns) {
             const spawn = Game.spawns[name];
@@ -19,6 +21,8 @@ export class spawn_ex extends Spawn {
         }
     }
 }
+
+export const start_spawn_task = check_creep_number;
 
 function check_creep_number(): void {
     console.log("check creeps num");
