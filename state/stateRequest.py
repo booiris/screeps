@@ -20,4 +20,4 @@ while (True):
         client.write_points(res, database="screeps")
     except Exception as e:
         print('Reason:', e)
-    time.sleep(60)
+    time.sleep(120)
