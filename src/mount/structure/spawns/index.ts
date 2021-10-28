@@ -5,6 +5,7 @@ export class spawn_ex extends Spawn {
         if (Game.time % 300 == 0) {
             check_creep_number();
         }
+        // check_creep_number();
 
         for (const name in Game.spawns) {
             const spawn = Game.spawns[name];
@@ -30,12 +31,19 @@ function check_creep_number(): void {
 
     for (const name in Game.rooms) {
         creep_cnt[name] = {};
+        if (!Game.rooms[name].memory.spawn_task)
+            Game.rooms[name].memory.spawn_task = [];
         for (const role of priority_role) {
             creep_cnt[name][role] = 0;
         }
         for (let role of Game.rooms[name].memory.spawn_task) {
             creep_cnt[name][role]++;
         }
+    }
+
+    for (const name in Memory.rooms) {
+        if (!Game.rooms[name])
+            delete Memory.rooms[name];
     }
 
     for (const name in Memory.creeps) {
