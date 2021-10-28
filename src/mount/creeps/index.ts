@@ -1,6 +1,7 @@
 import { harvester } from '../../roles/harvester/index';
 import { builder } from '../../roles/builder/index';
 import { carryer } from '../../roles/carryer/index';
+import { upgrader } from '../../roles/upgrader/index';
 export class creep_ex extends Creep {
 
     public onWork() {
@@ -17,6 +18,8 @@ export class creep_ex extends Creep {
             case "builder":
                 builder(this);
                 break;
+            case "upgrader":
+                upgrader(this);
             default:
                 break;
         }

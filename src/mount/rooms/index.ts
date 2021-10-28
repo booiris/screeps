@@ -16,8 +16,6 @@ export class room_ex extends Room {
             }
         }
 
-
-
         const targets: source_ex[] = this.find(FIND_SOURCES);
         if (!global.source)
             global.source = {};
@@ -25,8 +23,8 @@ export class room_ex extends Room {
             targets[name].onWork();
 
         const constructions: construction_ex[] = this.find(FIND_MY_CONSTRUCTION_SITES);
-        if (!this.memory.building)
-            this.memory.building = {};
+        if (!Memory.building)
+            Memory.building = {};
         for (const name in constructions)
             constructions[name].onWork();
     }

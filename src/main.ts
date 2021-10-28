@@ -5,7 +5,7 @@ import { primary_part } from './modules/primary_part';
 import { creep_ex } from './mount/creeps/index';
 import { room_ex } from './mount/rooms/index';
 import { source_ex } from './mount/rooms/source/index';
-import { spawn_ex, start_spawn_task } from './mount/structure/spawns/index';
+import { spawn_ex} from './mount/structure/spawns/index';
 import { structure_ex } from './mount/structure/index';
 import { construction_ex } from './mount/rooms/construction/index';
 
@@ -26,6 +26,6 @@ app.on(primary_part);
 
 app.on(stateScannerPlugin);
 
-app.on({ born: start_spawn_task, tickEnd: () => { console.log(Game.cpu.getUsed()) } });
+app.on({ tickEnd: () => { console.log(Game.cpu.getUsed()) } });
 
 export const loop = () => app.run();

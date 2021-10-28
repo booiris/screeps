@@ -23,7 +23,7 @@ export class spawn_ex extends Spawn {
     }
 }
 
-export const start_spawn_task = check_creep_number;
+global.spawn = check_creep_number;
 
 function check_creep_number(): void {
     console.log("check creeps num");
