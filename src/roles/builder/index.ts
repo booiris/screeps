@@ -7,6 +7,17 @@ export function builder(creep: Creep) {
                 Memory.build[creep.memory.target].in_task--;
             }
         }
+
+        if (!creep.memory.target) {
+            const structures = creep.room.find(FIND_MY_STRUCTURES);
+            for (const i of structures) {
+                if (i.hits < i.hitsMax >> 1) {
+                    creep.memory.target = i.id;
+                    break;
+                }
+            }
+        }
+
         creep.memory.state = "carry";
     }
     if (Memory.build[creep.memory.target])
@@ -25,6 +36,10 @@ export function builder(creep: Creep) {
             temp = creep.build(target);
         } else if (target instanceof Structure) {
             temp = creep.repair(target);
+        } else {
+            delete Memory.build[creep.memory.target];
+            creep.memory.target = undefined;
+            return;
         }
         if (temp == ERR_NOT_IN_RANGE) {
             creep.moveTo(target);

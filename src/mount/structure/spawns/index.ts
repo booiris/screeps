@@ -2,6 +2,22 @@ import { priority_role, config } from './creep_config';
 export class spawn_ex extends Spawn {
     public onWork() {
 
+
+        if (!global.spawns[this.id]) {
+            global.spawns[this.id] = {};
+            global.spawns[this.id].source_path = [];
+            const sources: Source[] = this.room.find(FIND_SOURCES);
+            for (let source of sources) {
+                const path = PathFinder.search(this.pos, source.pos).path;
+                global.spawns[this.id].source_path.push(path);
+            }
+        }
+
+        for (let path of global.spawns[this.id].source_path) {
+            this.room.visual.poly(path, { stroke: '#ffffff', strokeWidth: .8, opacity: .2, lineStyle: 'dashed' });
+        }
+
+
         if (Game.time % 300 == 0) {
             check_creep_number();
         }

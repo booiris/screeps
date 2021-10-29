@@ -6,7 +6,12 @@ export class creep_ex extends Creep {
 
     public onWork() {
 
-        if (this.spawning) return;
+        if (!global.creeps[this.id]) {
+            global.creeps[this.id] = {};
+            global.creeps[this.id].stand_cnt = 0;
+        }
+
+        if (this.spawning || this.fatigue > 0) return;
 
         switch (this.memory.role) {
             case "harvester":
@@ -23,6 +28,8 @@ export class creep_ex extends Creep {
             default:
                 break;
         }
+
+        this.memory.pre_pos = this.pos.x + '/' + this.pos.y;
 
         if (this.ticksToLive < 2) {
             this.room.memory.spawn_task.push(this.memory.role);

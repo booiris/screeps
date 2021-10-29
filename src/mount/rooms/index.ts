@@ -4,8 +4,7 @@ export class room_ex extends Room {
     public onWork() {
         const name = this.name;
         // TODO 数据是否存在于 global 的判断位置可以修改
-        if (!global.rooms)
-            global.rooms = {};
+
         if (!global.rooms[name]) {
             global.rooms[name] = {};
             global.rooms[name].terrian = Game.map.getRoomTerrain(name);
@@ -19,8 +18,7 @@ export class room_ex extends Room {
         }
 
         const targets: source_ex[] = this.find(FIND_SOURCES);
-        if (!global.source)
-            global.source = {};
+
         for (const name in targets)
             targets[name].onWork();
 
