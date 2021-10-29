@@ -1,6 +1,8 @@
+import { find_source, get_source } from '../index';
 export function upgrader(creep: Creep): void {
 
-    if (!creep.memory.state) {
+    if (!creep.memory.target) {
+        creep.memory.target = creep.room.controller.id;
         creep.memory.state = "carry";
     }
 
@@ -8,32 +10,9 @@ export function upgrader(creep: Creep): void {
         if (!creep.memory.source) {
             creep.memory.source = find_source(creep);
         }
-
-        const source = Game.getObjectById(creep.memory.source);
-        if (source instanceof Source) {
-            if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(source);
-            }
-            else {
-                creep.memory.source = undefined;
-            }
-        } else if (source instanceof Structure) {
-            if (creep.withdraw(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(source)
-            }
-            else {
-                creep.memory.source = undefined;
-            }
-        }
-
-        if (creep.store[RESOURCE_ENERGY] >= creep.store.getCapacity()) {
-            creep.memory.state = "working";
-        }
+        get_source(creep);
     }
     else {
-        if (!creep.memory.target) {
-            creep.memory.target = creep.room.controller.id;
-        }
         const control: StructureController = Game.getObjectById(creep.memory.target);
         const temp = creep.upgradeController(control);
         if (temp == ERR_NOT_IN_RANGE) {
@@ -42,10 +21,4 @@ export function upgrader(creep: Creep): void {
             creep.memory.state = "carry";
         }
     }
-}
-
-export function find_source(creep: Creep): string {
-    //TODO 寻找最近的资源点
-    const source:Source = creep.room.find(FIND_SOURCES)[0];
-    return source.id;
 }

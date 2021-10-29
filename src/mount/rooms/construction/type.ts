@@ -1,3 +1,3 @@
 interface Memory{
-    building: {}
+    build: {}
 }

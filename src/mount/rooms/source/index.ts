@@ -9,7 +9,7 @@ export class source_ex extends Source {
         if (!global.source[id].stand_pos) {
             for (let i = 0; i < 8; i++) {
                 let nx = this.pos.x + key[i][0], ny = this.pos.y + key[i][1];
-                if (global.rooms[this.room.name].get(nx, ny) != 1) {
+                if (global.rooms[this.room.name].terrian.get(nx, ny) != 1) {
                     global.source[id].stand_pos = new RoomPosition(nx, ny, this.room.name);
                     const find = global.source[id].stand_pos.lookFor(LOOK_CONSTRUCTION_SITES);
                     // 判断位置是否有正在建造或者已经造好的容器

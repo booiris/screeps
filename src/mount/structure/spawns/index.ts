@@ -57,7 +57,7 @@ function check_creep_number(): void {
         }
     }
     for (const room_name in creep_cnt) {
-        const level = Game.rooms[room_name].controller.level - 1;
+        const level = Game.rooms[room_name].controller.level;
         for (const role of priority_role) {
             for (let i = creep_cnt[room_name][role]; i < config[role][level]; i++)
                 Game.rooms[room_name].memory.spawn_task.push(role);
