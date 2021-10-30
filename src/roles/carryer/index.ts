@@ -35,13 +35,16 @@ export function carryer(creep: Creep) {
     }
     else {
         const target: Structure = Game.getObjectById(creep.memory.target);
+        if (!target) {
+            creep.memory.target = undefined;
+        }
         const temp = creep.transfer(target, RESOURCE_ENERGY);
         if (temp == ERR_NOT_IN_RANGE) {
             creep.moveTo(target);
         } else if (temp == ERR_NOT_ENOUGH_RESOURCES) {
             creep.memory.state = "carry";
             creep.memory.target = undefined;
-        } else {
+        } else if (temp != 0) {
             creep.memory.target = undefined;
         }
     }

@@ -32,15 +32,16 @@ export function builder(creep: Creep) {
     }
     else {
         const target: ConstructionSite | Structure = Game.getObjectById(creep.memory.target);
+        if (!target) {
+            delete Memory.build[creep.memory.target];
+            creep.memory.target = undefined;
+            return;
+        }
         let temp = undefined;
         if (target instanceof ConstructionSite) {
             temp = creep.build(target);
         } else if (target instanceof Structure) {
             temp = creep.repair(target);
-        } else {
-            delete Memory.build[creep.memory.target];
-            creep.memory.target = undefined;
-            return;
         }
         if (temp == ERR_NOT_IN_RANGE) {
             creep.moveTo(target);
@@ -49,7 +50,7 @@ export function builder(creep: Creep) {
         } else if (temp == ERR_INVALID_TARGET) {
             delete Memory.build[creep.memory.target];
             creep.memory.target = undefined;
-        } else {
+        } else if (temp != 0) {
             creep.memory.target = undefined;
         }
     }
