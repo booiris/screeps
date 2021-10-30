@@ -15,9 +15,10 @@ export function carryer(creep: Creep) {
                 }
             });
             for (const i of structures) {
-                if (i.store[RESOURCE_ENERGY] == i.store.getCapacity())
+                const temp: number = i.store.getFreeCapacity();
+                if (temp <= 0)
                     continue;
-                if (i.store[RESOURCE_ENERGY] < min_store) {
+                if (temp < min_store) {
                     min_store = i.store[RESOURCE_ENERGY];
                     creep.memory.target = i.id;
                 }
