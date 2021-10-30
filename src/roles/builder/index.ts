@@ -50,6 +50,10 @@ export function builder(creep: Creep) {
         if (target instanceof ConstructionSite) {
             temp = creep.build(target);
         } else if (target instanceof StructureRoad || target instanceof StructureContainer) {
+            if (target.hits == target.hitsMax) {
+                creep.memory.target = undefined;
+                return;
+            }
             temp = creep.repair(target);
         } else {
             creep.memory.target = undefined;
