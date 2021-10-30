@@ -5,4 +5,4 @@ export var config = {
     upgrader: [0, 1, 2, 0, 2],
 }
 
-export var priority_role = ["harvester", "upgrader", "builder", "carryer"]
+export var priority_role = ["harvester", "upgrader", "carryer", "builder"]

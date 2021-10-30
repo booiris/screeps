@@ -4,6 +4,7 @@ export class construction_ex extends ConstructionSite {
         if (!Memory.build[this.id]) {
             Memory.build[this.id] = {};
             Memory.build[this.id].in_task = 0;
+            Memory.build[this.id].query = 2;
         }
         const temp = Memory.build[this.id].query - Memory.build[this.id].in_task;
 

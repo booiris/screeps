@@ -10,6 +10,8 @@ export function builder(creep: Creep) {
         if (!creep.memory.target) {
             const structures = creep.room.find(FIND_MY_STRUCTURES);
             for (const i of structures) {
+                if (i instanceof StructureController)
+                    continue;
                 if (i.hits < min_hit) {
                     min_hit = i.hits;
                     creep.memory.target = i.id;
@@ -46,6 +48,8 @@ export function builder(creep: Creep) {
             creep.memory.state = "carry";
         } else if (temp == ERR_INVALID_TARGET) {
             delete Memory.build[creep.memory.target];
+            creep.memory.target = undefined;
+        } else {
             creep.memory.target = undefined;
         }
     }
