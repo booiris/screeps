@@ -10,12 +10,14 @@ export class room_ex extends Room {
             global.rooms[name].terrian = Game.map.getRoomTerrain(name);
         }
 
-        if (!this.memory.build_task) {
-            this.memory.build_task = new Array();
+        if (!this.memory.tasks) {
+            this.memory.tasks = new Array();
             for (let i = 0; i < 3; i++) {
-                this.memory.build_task.push(new Array());
+                this.memory.tasks.push(new Array());
             }
         }
+        if (!this.memory.spawn_task)
+            this.memory.spawn_task = new Array();
 
         const targets: source_ex[] = this.find(FIND_SOURCES);
 

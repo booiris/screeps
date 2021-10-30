@@ -53,6 +53,9 @@ export function get_source(creep: Creep) {
 }
 
 function check_stand(creep: Creep) {
+    if (!creep.memory.pre_pos) {
+        return;
+    }
     const pos = creep.memory.pre_pos.split("/");
     const x = parseInt(pos[0]);
     const y = parseInt(pos[1]);

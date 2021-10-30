@@ -1,3 +1,3 @@
 interface RoomMemory {
-    build_task: Array<any>;
+    tasks: Array<any>;
 }

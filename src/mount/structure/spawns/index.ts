@@ -8,7 +8,7 @@ export class spawn_ex extends Spawn {
             global.spawns[this.id].source_path = [];
             const sources: Source[] = this.room.find(FIND_SOURCES);
             for (let source of sources) {
-                const path = PathFinder.search(this.pos, source.pos).path;
+                const path = PathFinder.search(this.pos, global.source[source.id].stand_pos).path;
                 global.spawns[this.id].source_path.push(path);
             }
         }
@@ -18,7 +18,7 @@ export class spawn_ex extends Spawn {
         }
 
 
-        if (Game.time % 300 == 0) {
+        if (Game.time % 100 == 0) {
             check_creep_number();
         }
         // check_creep_number();
@@ -33,6 +33,8 @@ export class spawn_ex extends Spawn {
                     console.log('Spawning new harvester: ' + newName);
                     spawn.spawnCreep([WORK, CARRY, MOVE], newName, { memory: { role: role } });
                     spawn.room.memory.spawn_task.shift();
+                } else {
+                    
                 }
             }
         }
@@ -44,6 +46,12 @@ global.spawn = check_creep_number;
 function check_creep_number(): void {
     console.log("check creeps num");
     let creep_cnt = {};
+
+    for (const name in Memory.build) {
+        if (!Game.getObjectById(name)) {
+            delete Memory.build[name];
+        }
+    }
 
     for (const name in Game.rooms) {
         creep_cnt[name] = {};

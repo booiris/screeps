@@ -1,19 +1,18 @@
 import { find_source, get_source } from '../index';
 export function builder(creep: Creep) {
     if (!creep.memory.target) {
-        for (let i = 0; i < 3; i++) {
-            if (creep.room.memory.build_task[i].length) {
-                creep.memory.target = creep.room.memory.build_task[i].shift();
-                Memory.build[creep.memory.target].in_task--;
-            }
+        if (creep.room.memory.tasks[0].length) {
+            creep.memory.target = creep.room.memory.tasks[0].shift();
+            Memory.build[creep.memory.target].in_task--;
         }
 
+        let min_hit = 1000000000;
         if (!creep.memory.target) {
             const structures = creep.room.find(FIND_MY_STRUCTURES);
             for (const i of structures) {
-                if (i.hits < i.hitsMax >> 1) {
+                if (i.hits < min_hit) {
+                    min_hit = i.hits;
                     creep.memory.target = i.id;
-                    break;
                 }
             }
         }
