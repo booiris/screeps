@@ -12,7 +12,8 @@ export function builder(creep: Creep) {
             for (const i of structures) {
                 if (i instanceof StructureController)
                     continue;
-                if (i.hits < min_hit) {
+                const temp = i.hitsMax - i.hits;
+                if (temp < min_hit) {
                     min_hit = i.hits;
                     creep.memory.target = i.id;
                 }
