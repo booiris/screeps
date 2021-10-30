@@ -4,8 +4,7 @@ export function carryer(creep: Creep) {
         if (creep.room.memory.tasks[1].length) {
             creep.memory.target = creep.room.memory.tasks[1].shift();
         }
-
-        let min_store = 1000000000;
+        let max_store = 0;
         if (!creep.memory.target) {
             const structures: StructureExtension | StructureSpawn | StructureTower[] = creep.room.find(FIND_MY_STRUCTURES, {
                 filter: (structure) => {
@@ -15,14 +14,18 @@ export function carryer(creep: Creep) {
                 }
             });
             for (const i of structures) {
-                const temp: number = i.store.getFreeCapacity();
+                const temp: number = i.store.getFreeCapacity(RESOURCE_ENERGY);
                 if (temp <= 0)
                     continue;
-                if (temp < min_store) {
-                    min_store = i.store[RESOURCE_ENERGY];
+                if (temp > max_store) {
+                    max_store = temp;
                     creep.memory.target = i.id;
                 }
             }
+        }
+        if (!creep.memory.target) {
+            creep.moveTo(creep.room.find(FIND_MY_SPAWNS)[0]);
+            return;
         }
 
         creep.memory.state = "carry";

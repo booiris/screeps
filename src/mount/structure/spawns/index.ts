@@ -1,4 +1,4 @@
-import { priority_role, config } from './creep_config';
+import { priority_role, config, spawn_level } from './creep_config';
 export class spawn_ex extends Spawn {
     public onWork() {
 
@@ -28,13 +28,13 @@ export class spawn_ex extends Spawn {
             const spawn_task = spawn.room.memory.spawn_task;
             if (spawn_task.length) {
                 const role = spawn_task[0];
-                if (!spawn.spawnCreep([WORK, CARRY, MOVE], "1", { dryRun: true })) {
+                const level = this.room.controller.level;
+                const make_config = spawn_level[role][level];
+                if (!spawn.spawnCreep(make_config, "1", { dryRun: true })) {
                     const newName = '' + Game.time;
                     console.log('Spawning new harvester: ' + newName);
-                    spawn.spawnCreep([WORK, CARRY, MOVE], newName, { memory: { role: role } });
+                    spawn.spawnCreep(make_config, newName, { memory: { role: role } });
                     spawn.room.memory.spawn_task.shift();
-                } else {
-                    
                 }
             }
         }
@@ -80,6 +80,7 @@ function check_creep_number(): void {
             creep_cnt[room_name][creep.memory.role]++;
         }
     }
+
     for (const room_name in creep_cnt) {
         const level = Game.rooms[room_name].controller.level;
         for (const role of priority_role) {

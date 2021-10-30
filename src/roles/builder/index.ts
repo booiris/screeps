@@ -3,18 +3,25 @@ export function builder(creep: Creep) {
     if (!creep.memory.target) {
         if (creep.room.memory.tasks[0].length) {
             creep.memory.target = creep.room.memory.tasks[0].shift();
-            Memory.build[creep.memory.target].in_task--;
+            if (!Memory.build[creep.memory.target])
+                creep.memory.target = undefined;
+            else
+                Memory.build[creep.memory.target].in_task--;
         }
-
-        let min_hit = 1000000000;
+        let max_hit = 0;
         if (!creep.memory.target) {
-            const structures = creep.room.find(FIND_MY_STRUCTURES);
+            const structures = creep.room.find(FIND_STRUCTURES, {
+                filter: (structure) => {
+                    return (structure.structureType == STRUCTURE_CONTAINER ||
+                        structure.structureType == STRUCTURE_ROAD)
+                }
+            });
             for (const i of structures) {
                 if (i instanceof StructureController)
                     continue;
-                const temp = i.hitsMax - i.hits;
-                if (temp < min_hit) {
-                    min_hit = i.hits;
+                const temp = (i.hitsMax - i.hits) / i.hitsMax;
+                if (temp > max_hit) {
+                    max_hit = temp;
                     creep.memory.target = i.id;
                 }
             }
@@ -38,16 +45,21 @@ export function builder(creep: Creep) {
             creep.memory.target = undefined;
             return;
         }
+
         let temp = undefined;
         if (target instanceof ConstructionSite) {
             temp = creep.build(target);
-        } else if (target instanceof Structure) {
+        } else if (target instanceof StructureRoad || target instanceof StructureContainer) {
             temp = creep.repair(target);
+        } else {
+            creep.memory.target = undefined;
         }
         if (temp == ERR_NOT_IN_RANGE) {
             creep.moveTo(target);
         } else if (temp == ERR_NOT_ENOUGH_RESOURCES) {
             creep.memory.state = "carry";
+            if (!(target instanceof ConstructionSite))
+                creep.memory.target = undefined;
         } else if (temp == ERR_INVALID_TARGET) {
             delete Memory.build[creep.memory.target];
             creep.memory.target = undefined;
