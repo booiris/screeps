@@ -13,11 +13,11 @@ export function builder(creep: Creep) {
             const structures = creep.room.find(FIND_STRUCTURES, {
                 filter: (structure) => {
                     return (structure.structureType == STRUCTURE_CONTAINER ||
-                        structure.structureType == STRUCTURE_ROAD)
+                        structure.structureType == STRUCTURE_ROAD || structure.structureType == STRUCTURE_RAMPART)
                 }
             });
             for (const i of structures) {
-                if (i instanceof StructureController)
+                if (i instanceof StructureRampart && !i.my)
                     continue;
                 const temp = (i.hitsMax - i.hits) / i.hitsMax;
                 if (temp > max_hit) {
@@ -27,7 +27,13 @@ export function builder(creep: Creep) {
             }
         }
 
-        creep.memory.state = "carry";
+        if (!creep.memory.target) {
+            creep.moveTo(creep.room.find(FIND_MY_SPAWNS)[0]);
+            return;
+        }
+
+        if (creep.store.getUsedCapacity() <= 0)
+            creep.memory.state = "carry";
     }
     if (Memory.build[creep.memory.target])
         Memory.build[creep.memory.target].query--;
@@ -49,7 +55,7 @@ export function builder(creep: Creep) {
         let temp = undefined;
         if (target instanceof ConstructionSite) {
             temp = creep.build(target);
-        } else if (target instanceof StructureRoad || target instanceof StructureContainer) {
+        } else if (target instanceof StructureRoad || target instanceof StructureContainer || target instanceof StructureRampart) {
             if (target.hits == target.hitsMax) {
                 creep.memory.target = undefined;
                 return;

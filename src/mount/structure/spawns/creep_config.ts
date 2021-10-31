@@ -1,8 +1,8 @@
 export var config = {
     harvester: [2, 2, 2, 2, 2],
     carryer: [0, 1, 1, 1, 1],
-    builder: [0, 2, 3, 6, 6],
-    upgrader: [0, 1, 3, 0, 2],
+    builder: [0, 2, 3, 3, 6],
+    upgrader: [0, 1, 3, 3, 3],
 }
 
 export var priority_role = ["harvester", "upgrader", "carryer", "builder"]

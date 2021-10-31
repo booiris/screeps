@@ -1,7 +1,8 @@
-interface CreepMemory{
+interface CreepMemory {
     role: string;
     target?: string;
     state?: string;
     source?: string;
     pre_pos?: string;
+    last_source?: string;
 }

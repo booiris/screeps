@@ -23,12 +23,14 @@ export function carryer(creep: Creep) {
                 }
             }
         }
+
         if (!creep.memory.target) {
             creep.moveTo(creep.room.find(FIND_MY_SPAWNS)[0]);
             return;
         }
 
-        creep.memory.state = "carry";
+        if (creep.store.getUsedCapacity() <= 0)
+            creep.memory.state = "carry";
     }
 
     if (creep.memory.state == "carry") {
