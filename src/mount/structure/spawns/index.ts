@@ -28,8 +28,12 @@ export class spawn_ex extends Spawn {
             const spawn_task = spawn.room.memory.spawn_task;
             if (spawn_task.length) {
                 const role = spawn_task[0];
+<<<<<<< HEAD
                 let level = this.room.controller.level;
 
+=======
+                let level: number = this.room.controller.level;
+>>>>>>> 366154a08d2b0e23569a475b91f1417d676d0a61
                 while (level >= 0 && spawn.spawnCreep(spawn_level[role][level], "1", { dryRun: true }))
                     level--;
                 if (level < 0)
