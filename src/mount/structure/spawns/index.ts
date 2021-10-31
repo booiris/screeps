@@ -28,7 +28,11 @@ export class spawn_ex extends Spawn {
             const spawn_task = spawn.room.memory.spawn_task;
             if (spawn_task.length) {
                 const role = spawn_task[0];
-                const level = this.room.controller.level;
+                let level: number = this.room.controller.level;
+                while (level >= 0 && spawn.spawnCreep(spawn_level[role][level], "1", { dryRun: true }))
+                    level--;
+                if (level < 0)
+                    continue;
                 const make_config = spawn_level[role][level];
                 if (!spawn.spawnCreep(make_config, "1", { dryRun: true })) {
                     const newName = '' + Game.time;
