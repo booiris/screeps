@@ -1,0 +1,411 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"S",
+				"Solution"
+			],
+			[
+				"be",
+				"\\begin"
+			],
+			[
+				"lag",
+				"lag_len"
+			],
+			[
+				"sig",
+				"sigma_x"
+			],
+			[
+				"gen",
+				"generate_X"
+			],
+			[
+				"sigma",
+				"sigma_x"
+			],
+			[
+				"num",
+				"numpy"
+			],
+			[
+				"b",
+				"\\begin"
+			],
+			[
+				"pr",
+				"print〔function〕"
+			],
+			[
+				"p",
+				"py3.8"
+			],
+			[
+				"sq",
+				"sqrt〔module〕"
+			],
+			[
+				"prin",
+				"print"
+			],
+			[
+				"ret",
+				"ret_dict"
+			],
+			[
+				"F",
+				"FloatTensor"
+			],
+			[
+				"tor",
+				"torch"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/g++.sublime-build",
+					""
+				],
+				[
+					"Packages/User/g++.sublime-build",
+					"c++_RunInCommand"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"down",
+				"Sync Settings: Download"
+			],
+			[
+				"dow",
+				"Sync Settings: Download"
+			],
+			[
+				"uplo",
+				"Sync Settings: Upload"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"",
+				":$ - EOF"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"up",
+				"Sync Settings: Upload"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"ayu",
+				"ayu: Activate theme"
+			],
+			[
+				"ter",
+				"Terminus: Open Default Shell in Panel"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Enable Package"
+			],
+			[
+				"pca",
+				"Package Control: Disable Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"latex",
+				"LaTeXTools: Check system"
+			],
+			[
+				"syn",
+				"Sync Settings: Upload"
+			],
+			[
+				"sy",
+				"Sync Settings: Upload"
+			],
+			[
+				"sync",
+				"Sync Settings: Download"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 715.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": false,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": true,
+		"side_bar_visible": true,
+		"status_bar_visible": true
+	},
+	"expanded_folders":
+	[
+		"/home/booiris/screeps"
+	],
+	"file_history":
+	[
+		"/home/booiris/cf/contest/1573/a/a.cpp",
+		"/home/booiris/cf/contest/1573/a/ans1.txt",
+		"/home/booiris/anomaly-detection/document/paper-translation/chapters/0_abstract.tex",
+		"/home/booiris/anomaly-detection/document/paper-translation/chapters/3_chapter3.tex",
+		"/home/booiris/anomaly-detection/document/paper-translation/chapters/5_chapter5.tex",
+		"/home/booiris/anomaly-detection/document/paper-translation/chapters/1_chapter1.tex",
+		"/home/booiris/anomaly-detection/anomaly_detection.sublime-project",
+		"/home/booiris/anomaly-detection/document/paper-translation/main.tex",
+		"/home/booiris/anomaly-detection/TRMF/generate_data.py",
+		"/home/booiris/anomaly-detection/.gitignore",
+		"/home/booiris/anomaly_detection/anomaly_detection.sublime-project",
+		"/home/booiris/anomaly_detection/document/paper-translation/main.pdf",
+		"/home/booiris/.config/sublime-text/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/home/booiris/.config/sublime-text/Packages/User/Side Bar.sublime-settings",
+		"/home/booiris/.config/sublime-text/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/home/booiris/anomaly_detection/TRMF/trmf.py",
+		"/home/booiris/anomaly_detection/document/paper-translation/main.tex",
+		"/home/booiris/anomaly_detection/.sublime-project",
+		"/home/booiris/anomaly_detection/temp/paper-translation/main.tex",
+		"/home/booiris/anomaly_detection/document/paper-translation/chapters/0_abstract.tex",
+		"/home/booiris/anomaly_detection/document/paper-translation/misc/5_appendix.tex",
+		"/home/booiris/anomaly_detection/temp/paper-translation/main.log",
+		"/home/booiris/anomaly_detection/temp/paper-translation/main.pdf",
+		"/home/booiris/anomaly_detection/temp/temp.tex",
+		"/home/booiris/anomaly_detection/TRMF/generate_data.py",
+		"/home/booiris/.config/sublime-text/Packages/User/LaTeXTools.sublime-settings",
+		"/home/booiris/.config/sublime-text/Packages/LaTeXTools/Default (Linux).sublime-keymap",
+		"/home/booiris/anomaly_detection/.gitignore",
+		"/home/booiris/.config/sublime-text/Packages/User/Anaconda.sublime-settings",
+		"/home/booiris/anomaly_detection/TRMF/temp.ipynb",
+		"/home/booiris/.config/i3/config",
+		"/home/booiris/bg.png",
+		"/home/booiris/anomaly_detection/temp/temp.log",
+		"/home/booiris/.config/sublime-text/Packages/User/All Autocomplete.sublime-settings",
+		"/home/booiris/anomaly_detection/temp.tex",
+		"/home/booiris/Generative-Semi-supervised-Learning-for-Multivariate-Time-Series-Imputation/models/brits.py",
+		"/home/booiris/Generative-Semi-supervised-Learning-for-Multivariate-Time-Series-Imputation/data_loader.py",
+		"/home/booiris/.config/sublime-text/Packages/Anaconda/Default (Linux).sublime-keymap",
+		"/home/booiris/Generative-Semi-supervised-Learning-for-Multivariate-Time-Series-Imputation/main.py",
+		"/home/booiris/Generative-Semi-supervised-Learning-for-Multivariate-Time-Series-Imputation/models/discriminator2.py",
+		"/home/booiris/Generative-Semi-supervised-Learning-for-Multivariate-Time-Series-Imputation/models/brits_i.py",
+		"/home/booiris/Generative-Semi-supervised-Learning-for-Multivariate-Time-Series-Imputation/models/classifier.py",
+		"/home/booiris/.config/sublime-text/Packages/Anaconda/Anaconda.sublime-settings",
+		"/home/booiris/.config/sublime-text/Packages/User/JSON (Sublime).sublime-settings",
+		"/home/booiris/Generative-Semi-supervised-Learning-for-Multivariate-Time-Series-Imputation/temp.py",
+		"/home/booiris/.config/sublime-text/Packages/User/Default (Linux).sublime-keymap",
+		"/home/booiris/.config/sublime-text/Packages/Default/Preferences.sublime-settings",
+		"/home/booiris/.config/sublime-text/Packages/User/Preferences.sublime-settings",
+		"/home/booiris/.config/sublime-text/Packages/User/SublimeCodeIntel.sublime-settings",
+		"/home/booiris/miniconda3/envs/py3.8/lib/python3.8/site-packages/torch/optim/__init__.py",
+		"/home/booiris/.config/sublime-text/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/home/booiris/.config/sublime-text/Packages/All Autocomplete/All Autocomplete.sublime-settings",
+		"/home/booiris/Generative-Semi-supervised-Learning-for-Multivariate-Time-Series-Imputation/models/rits_i.py",
+		"/home/booiris/Generative-Semi-supervised-Learning-for-Multivariate-Time-Series-Imputation/pyrightconfig.json",
+		"/home/booiris/miniconda3/envs/py3.8/lib/python3.8/site-packages/torch/cuda/__init__.py",
+		"/home/booiris/miniconda3/envs/py3.8/lib/python3.8/site-packages/pandas/__init__.py",
+		"/home/booiris/miniconda3/envs/py3.8/lib/python3.8/site-packages/sklearn/metrics/__init__.py",
+		"/home/booiris/.cache/sublime-text/Package Storage/LSP-pyright/17.3.0/language-server/node_modules/pyright/dist/typeshed-fallback/stdlib/argparse.pyi",
+		"/home/booiris/.cache/sublime-text/Package Storage/LSP-pyright/17.3.0/language-server/node_modules/pyright/dist/typeshed-fallback/stdlib/math.pyi",
+		"/home/booiris/.config/sublime-text/Packages/User/LSP-pyright.sublime-settings",
+		"/home/booiris/.config/sublime-text/Packages/LSP-pyright/LSP-pyright.sublime-settings"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 40.0
+	},
+	"input":
+	{
+		"height": 92.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.Terminus":
+	{
+		"height": 198.0
+	},
+	"output.diagnostics":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 671.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "screep.sublime-project",
+	"replace":
+	{
+		"height": 76.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/leetcode/leetcode.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 432.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
