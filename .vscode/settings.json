@@ -8,6 +8,7 @@
         "screep.sublime*": true,
         "Gruntfile.js": true,
         ".screeps*": true,
+        "dist/": true,
     },
     "editor.fontSize": 15,
     "diffEditor.renderIndicators": false,
@@ -28,6 +29,7 @@
         // "scheme": "scheme -quiet < $fileName",
         "scheme": "scheme < $fileName",
         "python": "python3 $fileName",
+        "typescript": "$workspaceRoot/push.sh"
     },
     // 在运行代码之前保存文件
     "code-runner.saveFileBeforeRun": true,
