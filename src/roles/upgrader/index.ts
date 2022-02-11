@@ -13,7 +13,7 @@ export function upgrader(creep: Creep): void {
         get_source(creep);
     }
     else {
-        const control: StructureController = Game.getObjectById(creep.memory.target);
+        const control = Game.getObjectById(creep.memory.target as Id<StructureController>);
         const temp = creep.upgradeController(control);
         if (temp == ERR_NOT_IN_RANGE) {
             creep.moveTo(control);

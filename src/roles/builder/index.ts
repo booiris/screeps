@@ -45,7 +45,7 @@ export function builder(creep: Creep) {
         get_source(creep);
     }
     else {
-        const target: ConstructionSite | Structure = Game.getObjectById(creep.memory.target);
+        const target: ConstructionSite | Structure = Game.getObjectById(creep.memory.target as Id<ConstructionSite | Structure>);
         if (!target) {
             delete Memory.build[creep.memory.target];
             creep.memory.target = undefined;

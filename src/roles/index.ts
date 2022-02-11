@@ -34,7 +34,7 @@ export function find_source(creep: Creep): string {
 }
 
 export function get_source(creep: Creep) {
-    const source = Game.getObjectById(creep.memory.source);
+    const source = Game.getObjectById(creep.memory.source as Id<Source | Structure | Resource>);
     if (!source) {
         creep.memory.source = undefined;
     }

@@ -40,7 +40,7 @@ export function carryer(creep: Creep) {
         get_source(creep);
     }
     else {
-        const target: Structure = Game.getObjectById(creep.memory.target);
+        const target: Structure = Game.getObjectById(creep.memory.target as Id<Structure>);
         if (!target) {
             creep.memory.target = undefined;
         }

@@ -52,7 +52,7 @@ function check_creep_number(): void {
     let creep_cnt = {};
 
     for (const name in Memory.build) {
-        if (!Game.getObjectById(name)) {
+        if (!Game.getObjectById(name as Id<ConstructionSite>)) {
             delete Memory.build[name];
         }
     }

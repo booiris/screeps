@@ -24,13 +24,12 @@ export function harvester(creep: Creep): void {
         if (creep.store[RESOURCE_ENERGY] > 0 && building.length)
             creep.build(building[0]);
         else {
-            const source: Source = Game.getObjectById(source_id);
+            const source: Source = Game.getObjectById(source_id as Id<Source>);
             creep.harvest(source);
         }
     }
 
     if (creep.ticksToLive < 2) {
-
         creep.drop(RESOURCE_ENERGY);
     }
 }

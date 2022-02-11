@@ -1,7 +1,7 @@
 export var config = {
     harvester: [2, 2, 2, 2, 2],
     carryer: [0, 1, 1, 1, 1],
-    builder: [0, 2, 3, 3, 4],
+    builder: [0, 2, 2, 2, 3],
     upgrader: [0, 1, 3, 3, 3],
 }
 
