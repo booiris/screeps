@@ -2,20 +2,20 @@ export function find_source(creep: Creep): string {
     let res = undefined;
     const room_name = creep.room.name;
 
-    if (creep.memory.role == "carryer") {
+    if (creep.memory.role != "harvester") {
         const target = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
         if (target) {
             return target.id;
         }
     }
 
-    let containers: StructureContainer[] = creep.room.find(FIND_STRUCTURES, { filter: { structureType: STRUCTURE_CONTAINER } });
+    let containers: StructureContainer[] = creep.room.find(FIND_STRUCTURES, { filter: { structureType: STRUCTURE_CONTAINER || STRUCTURE_STORAGE } });
 
     let min = 1000000000;
     for (const i of containers) {
-        const container: StructureContainer = i;
+        const container: StructureContainer | StructureStorage = i;
 
-        if (container.store[RESOURCE_ENERGY] < 300)
+        if (container.store[RESOURCE_ENERGY] < 100)
             continue;
         if (creep.memory.last_source && creep.memory.last_source == container.id)
             continue;
@@ -34,9 +34,11 @@ export function find_source(creep: Creep): string {
 }
 
 export function get_source(creep: Creep) {
-    const source = Game.getObjectById(creep.memory.source as Id<Source | Structure | Resource>);
+    var source = Game.getObjectById(creep.memory.source as Id<Source | Structure | Resource>);
     if (!source) {
         creep.memory.source = undefined;
+        const source_id = find_source(creep)
+        source = Game.getObjectById(source_id as Id<Source | Structure | Resource>);
     }
     if (source instanceof Source) {
         const temp = creep.harvest(source);
@@ -74,6 +76,9 @@ export function get_source(creep: Creep) {
 }
 
 function check_stand(creep: Creep) {
+    // console.log("check!!!!")
+    // console.log(creep.name)
+    // console.log(global.creeps[creep.id].stand_cnt)
     if (!creep.memory.pre_pos) {
         return;
     }

@@ -9,6 +9,7 @@ import { spawn_ex } from './mount/structure/spawns/index';
 import { structure_ex } from './mount/structure/index';
 import { construction_ex } from './mount/rooms/construction/index';
 import { mount_global } from './mount/global/index';
+import { structuretower_ex } from './mount/structure/tower';
 
 const mount_list: [AnyClass, AnyClass][] = [
     [Creep, creep_ex],
@@ -16,7 +17,8 @@ const mount_list: [AnyClass, AnyClass][] = [
     [Source, source_ex],
     [Spawn, spawn_ex],
     [Structure, structure_ex],
-    [ConstructionSite, construction_ex]
+    [ConstructionSite, construction_ex],
+    [StructureTower, structuretower_ex],
 ]
 
 const app = new App({ name: "myApp", mountList: mount_list });
